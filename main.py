@@ -100,3 +100,4 @@ def ONP(w) :
 if __name__ == '__main__':
     w = "(1+3)*6+(2-1)"
     print( ONP(w))
+nd
