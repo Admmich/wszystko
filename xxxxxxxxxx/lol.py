@@ -1,3 +1,4 @@
 def cos[]:
     pass
+    keyword
 

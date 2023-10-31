@@ -1,4 +1,4 @@
-
+import xxxxxxxxxx from lol.py
 
 
 
@@ -66,42 +66,69 @@
 #         return False
 # print(sprNawiasy((wyr)))
 
-def ONP(w) :
-    stos = []
-    stos.append('#')
-    onp = ""
+# def ONP(w) :
+#     stos = []
+#     stos.append('#')
+#     onp = ""
+#
+#     for i in range(len(w)) :
+#         if w[i]=='(' :
+#             stos.append('(')
+#             continue
+#         if w[i]==')':
+#             while stos[-1]!='(':
+#                 onp=onp+stos[-1]
+#                 stos.pop()
+#             stos.pop()
+#             continue
+#         if w[i]=='+' or w[i]=='-':
+#             while stos[-1]!='#' and stos[-1]!='(':
+#                 onp=onp+stos[-1]
+#                 stos.pop()
+#             stos.append(w[i])
+#             continue
+#         if w[i]=='*' or w[i]=='/':
+#             if stos[-1]=='*' or stos[-1]=='/':
+#                 onp=onp+stos[-1]
+#                 stos.pop()
+#             stos.append(w[i])
+#         else :
+#             onp=onp+w[i]
+#     while stos[-1] != '#':
+#         onp = onp + stos[-1]
+#         stos.pop()
+#     stos.pop()
+#     return onp
+#
+#
+#
+# if __name__ == '__main__':
+#     w = "(1+3)*6+(2-1)"
+#     print( ONP(w))
 
-    for i in range(len(w)) :
-        if w[i]=='(' :
-            stos.append('(')
-            continue
-        if w[i]==')':
-            while stos[-1]!='(':
-                onp=onp+stos[-1]
-                stos.pop()
-            stos.pop()
-            continue
-        if w[i]=='+' or w[i]=='-':
-            while stos[-1]!='#' and stos[-1]!='(':
-                onp=onp+stos[-1]
-                stos.pop()
-            stos.append(w[i])
-            continue
-        if w[i]=='*' or w[i]=='/':
-            if stos[-1]=='*' or stos[-1]=='/':
-                onp=onp+stos[-1]
-                stos.pop()
-            stos.append(w[i])
-        else :
-            onp=onp+w[i]
-    while stos[-1] != '#':
-        onp = onp + stos[-1]
-        stos.pop()
-    stos.pop()
-    return onp
+
+# slw= {'Marcin': 123123123 , Marcin : 456456456}
+#
+# slw.update({'Mikolaj': 576378567})
+# y= input("Podaj imie: ")
+# x = int(input("Podaj numer: "))
+#
+# slw.update({y: x})
+#
+# del slw['Marcin']
+#
+# for i in slw:
+#     print(i , '-' , slw[i])
+# def licz():
+#     n=0.3333333333333333333
+#     return  n*3
+# if __name__ == '__name__':
+#     print(licz())
 
 
 
-if __name__ == '__main__':
-    w = "(1+3)*6+(2-1)"
-    print( ONP(w))
+
+x = 0
+while x!=1
+    x=x+0.1
+print(x)
