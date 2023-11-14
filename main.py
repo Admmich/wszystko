@@ -1,4 +1,4 @@
-import xxxxxxxxxx from lol.py
+# import xxxxxxxxxx from lol.py
 
 
 
@@ -128,7 +128,3 @@ import xxxxxxxxxx from lol.py
 
 
 
-x = 0
-while x!=1
-    x=x+0.1
-print(x)
