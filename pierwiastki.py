@@ -1,7 +1,7 @@
 import math
-a=1
-b=1
-c=2
+a=0.10000
+b=150
+c=5
 delta = b*b-4*a*c
 #math.sqrt(delta)
 print(delta)
