@@ -19,8 +19,13 @@ def binToFloat(n, ileBit=0):
 
 print(binToFloat("0,000110011001100110011001100110011", 4))
 
-eps = 0.0001
+eps = 0.00001
 
 skladowa = 1/6.0
-
-while skladowa .eps:
+i=1
+wynik = 0
+while skladowa > eps:
+    i += 2
+    skladowa += skladowa / i
+    skladowa /= i
+    print(skladowa)
