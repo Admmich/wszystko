@@ -19,13 +19,32 @@ import math
 #
 # print(binToFloat("0,000110011001100110011001100110011", 4))
 
-eps = 0.00001
+# eps = 0.00001
+#
+# skladowa = 1
+# i=1
+# wynik = 0
+# while skladowa > eps:
+#     i += 2
+#     skladowa += skladowa / i
+#     skladowa /= i
+#     print(skladowa)
 
-skladowa = 1/6.0
-i=1
-wynik = 0
-while skladowa > eps:
-    i += 2
-    skladowa += skladowa / i
-    skladowa /= i
-    print(skladowa)
+def silnia(n):
+    w = 1
+    for i in range(1, n+1):
+        w *= i
+    return w
+def zadanie():
+    eps = 0.0001
+    wynik = 1.0
+    k = 3
+    skladnik = 1/silnia(k)
+    znak = -1
+    while skladnik >= eps:
+        wynik += znak * skladnik
+        k += 2
+        skladnik = 1 / silnia(k)
+        znak = -znak
+    return wynik
+print(zadanie())
