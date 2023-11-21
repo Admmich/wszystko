@@ -48,3 +48,5 @@ def zadanie():
         znak = -znak
     return wynik
 print(zadanie())
+
+praca domowa
