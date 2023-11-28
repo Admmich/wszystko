@@ -106,3 +106,6 @@ def rezultat(pkt, tab):
 tab = los(3)
 print(tab)
 print(rezultat(100,tab))
+
+
+halo
