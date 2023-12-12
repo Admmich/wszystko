@@ -8,6 +8,12 @@ def indeks(tekst, litera):
 
 print(indeks(python, t))
 
+
+
+
+
+
+
 lista = ['Adam Nowak', 'Jan Kowalski', 'Piotr Baran']
 inicjal = []
 for i in lista:
