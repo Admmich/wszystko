@@ -1,3 +1,68 @@
+def indeks(tekst, litera):
+    indeks1 = []
+    for i, znak in enumerate(tekst):
+        if znak == litera:
+            indeksy.append(i)
+    return indeks
+
+
+print(indeks(python, t))
+
+lista = ['Adam Nowak', 'Jan Kowalski', 'Piotr Baran']
+inicjal = []
+for i in lista:
+    imie_nazw = i.split()
+    imie, nazw = imie_nazw[0], imie_nazw[1]
+    inicjal.append(imie[0] + nazw[0])
+
+print(inicjal)
+#zad 3
+def najdzzwzorz(tekst, wzorzec):
+    for i in tekst:
+        for j in wzorzec:
+            if i == j:
+                return True
+            else:
+                return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # x=3
 # listaarg = [3,2,1,-1,-2]
 # s=4
@@ -40,11 +105,12 @@
 #             print(i,"=",t.count(i),"szt")
 
 
-def bintodec(s):
-    p=len(s)-1
-    w=0
-    for i in s:
-        if i=='1':
-            w=w+2**p
-        p-=1
-    return w
+# def bintodec(s):
+#     p=len(s)-1
+#     w=0
+#     for i in s:
+#         if i=='1':
+#             w=w+2**p
+#         p-=1
+#     return w
+
