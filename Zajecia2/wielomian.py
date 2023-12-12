@@ -1,3 +1,67 @@
+L=[(1,2), (3,4)]
+def func():
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # def indeks(tekst, litera):
 #     indeks1 = []
 #     for i, znak in enumerate(tekst):
@@ -16,14 +80,7 @@
 #     inicjal.append(imie[0] + nazw[0])
 #
 # print(inicjal)
-# #zad 3
-# def najdzzwzorz(tekst, wzorzec):
-#     for i in tekst:
-#         for j in wzorzec:
-#             if i == j:
-#                 return True
-#             else:
-#                 return False
+
 # x = 0
 # while x!=1:
 #     print(x)
