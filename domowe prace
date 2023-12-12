@@ -1,19 +1,12 @@
+1.
 def indeks(tekst, litera):
     indeks1 = []
     for i, znak in enumerate(tekst):
         if znak == litera:
             indeksy.append(i)
     return indeks
-
-
 print(indeks(python, t))
-
-
-
-
-
-
-
+2.
 lista = ['Adam Nowak', 'Jan Kowalski', 'Piotr Baran']
 inicjal = []
 for i in lista:
@@ -22,11 +15,10 @@ for i in lista:
     inicjal.append(imie[0] + nazw[0])
 
 print(inicjal)
-#zad 3
-def najdzzwzorz(tekst, wzorzec):
-    for i in tekst:
-        for j in wzorzec:
-            if i == j:
+3.
+def funkcji(tekst,wzorzec):
+    for i in range(0, len(tekst)-len(wzorzec)+1):
+        if wzorzec[0]==tekst[i]:
+            tmp=len(wzorzec)+i
+            if wzorzec==tekst[i:tmp]:
                 return True
-            else:
-                return False
