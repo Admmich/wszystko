@@ -22,11 +22,4 @@ for i in lista:
     inicjal.append(imie[0] + nazw[0])
 
 print(inicjal)
-#zad 3
-def najdzzwzorz(tekst, wzorzec):
-    for i in tekst:
-        for j in wzorzec:
-            if i == j:
-                return True
-            else:
-                return False
+
