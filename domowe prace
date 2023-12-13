@@ -25,7 +25,7 @@ def funkcji(tekst,wzorzec):
 ---------------------------------------------------
 import math
 
-punktyx = [(2,3),(1,7)]
+punktyx = [(2,3),(1,5)]
 
 def dlugosc(punkty):
     x1, y1 = punkty[0]
