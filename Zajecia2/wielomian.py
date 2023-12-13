@@ -1,64 +1,40 @@
-L=[(1,2), (3,4)]
-def func():
+#napisz funkcje sprawdzianjaca czy 2 pkt leza po tej samej stronie prostej, podajemy wartosci a b c rownaia oglnego prostej.
+punkt=[(1,2),(3,4)]
 
+def func(a,b,c,punkt):
+    if(a*w[0][0]+b*w[0][1]+c)+(a*w[1][0]+b*punkt[1][1]+c)>0:
+        return True
+    else:
+        return False
+    print(func(-1,2,-3))
 
+def w():
+    a = 2
+    b = -3
+    c = 1
+    x1 = 1
+    y1 = 2
+    x2 = 3
+    y2 = 4
+    w = a * x1 + b * y1 + c
+    w = a * x2 + b * y2 + c
+    if (w > 0 and w > 0) or \
+            (w < 0 and w < 0):
+        return True
+    else:
+        return False
+wynik = w()
+print(wynik)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# import math
+#
+# w = [(1,2),(3,4)]
+#
+# def dlugosc(punkty):
+#     x1, y1 = punkty[0]
+#     x2, y2 = punkty[1]
+#     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+# print(dlugosc(w))
 
 
 
