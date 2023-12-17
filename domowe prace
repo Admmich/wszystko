@@ -23,7 +23,7 @@ def funkcji(tekst,wzorzec):
             tmp=len(wzorzec)+i
             if wzorzec==tekst[i:tmp]:
                 return True
----------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 import math
 
 w = [(1,2),(3,4)]
@@ -33,7 +33,7 @@ def dlugosc(punkty):
     x2, y2 = punkty[1]
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 print(dlugosc(w))
---------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2023-12-01
 1.
 def wczytaj():
@@ -93,3 +93,21 @@ if __name__ == "__main__":
  #enumerate służy do iteracji przez elementy sekwencji jednocześnie zwracając ich indeksy
  #.join jest używana do łączenia elementów sekwencji (takich jak listy) w jeden ciąg znaków. 
  # .split jest używana do dzielenia ciągu znaków na listę podciągów, używając określonego separatora
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2023-12-13
+1.
+def punkty_po_tej_samej_stronie(a, punkt_b, prosta):
+    wartosc_a = prosta(a[0])
+    b = prosta(punkt_b[0])
+    return (wartosc_a > 0 and b > 0) or (wartosc_a < 0 and b < 0)
+def czy_prosta_równoległa_do_oy(prosta):
+    return prosta(0) == prosta(0)
+a = 2
+b = 3
+prosta_przyklad = lambda x: a * x + b
+punkt1 = (1, 5)
+punkt2 = (2, 9)
+wynik_punkty_po_tej_samej_stronie = punkty_po_tej_samej_stronie(punkt1, punkt2, prosta_przyklad)
+wynik_czy_prosta_równoległa_do_oy = czy_prosta_równoległa_do_oy(lambda x: a)
+print("Punkty leżą po tej samej stronie prostej:", wynik_punkty_po_tej_samej_stronie)
+print("Prosta jest równoległa do osi OY:", wynik_czy_prosta_równoległa_do_oy)
