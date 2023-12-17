@@ -1,3 +1,4 @@
+2023-12-05
 1.
 def indeks(tekst, litera):
     indeks1 = []
@@ -32,3 +33,63 @@ def dlugosc(punkty):
     x2, y2 = punkty[1]
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 print(dlugosc(w))
+--------------------------------------------------------------
+2023-12-01
+1.
+def wczytaj():
+    return [float(x) for x in input("Podaj 1 wielomian: ").split()]
+
+def dodaj(wielomian1, wielomian2):
+    return [a + b for a, b in zip(wielomian1, wielomian2)]
+
+def wypisz(wielomian):
+    print("Wynik:", " + ".join([f"{a}" for i, a in enumerate(wielomian[::-1])]))
+
+if __name__ == "__main__":
+    wielomian1 = wczytaj()
+    wielomian2 = wczytaj()
+
+    suma = dodaj(wielomian1, wielomian2)
+    wypisz(suma)
+2.
+def wczytaj():
+    return [float(x) for x in input("Podaj wielomian: ").split()]
+
+def pomnoz(wielomian1, wielomian2):
+    return [a * b for a, b in zip(wielomian1, wielomian2)]
+
+def wypisz(wielomian):
+    print("Wynik:", " + ".join([f"{a}" for i, a in enumerate(wielomian[::-1])]))
+
+if __name__ == "__main__":
+    wielomian1 = wczytaj()
+    wielomian2 = wczytaj()
+
+    iloczyn = pomnoz(wielomian1, wielomian2)
+    wypisz(iloczyn)
+3.
+def wczytaj():
+    return [float(x) for x in input("Podaj współczynniki wielomianu: ").split()]
+
+def obliczhorner(wielomian, c):
+    iloraz = [wielomian[0]]
+
+    for wspolczynnik in wielomian[1:]:
+        iloraz.append(iloraz[-1] * c + wspolczynnik)
+
+    return iloraz
+
+def wypisz_iloraz(iloraz):
+    print("Wynik dzielenia wielomianu przez dwumian:")
+    print(" + ".join([f"{a}" for i, a in enumerate(iloraz[:-1][::-1])]))
+
+if __name__ == "__main__":
+    wielomian = wczytaj()
+    c = float(input("Podaj c: "))
+
+    horner = obliczhorner(wielomian, -c)
+    wypisz_iloraz(horner)
+ #zip czyli przyporządkowuje elementy na tych samych pozycjach w różnych sekwencjach.
+ #enumerate służy do iteracji przez elementy sekwencji jednocześnie zwracając ich indeksy
+ #.join jest używana do łączenia elementów sekwencji (takich jak listy) w jeden ciąg znaków. 
+ # .split jest używana do dzielenia ciągu znaków na listę podciągów, używając określonego separatora
