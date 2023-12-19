@@ -1,30 +1,47 @@
-#napisz funkcje sprawdzianjaca czy 2 pkt leza po tej samej stronie prostej, podajemy wartosci a b c rownaia oglnego prostej.
-punkt=[(1,2),(3,4)]
+list=[]
+with open("punkty.txt","r") as file:
+    t=int(file.readline())
+    for i in range(t):
+        tmp=file.readline().split()
+        list.append((int(tmp[0]),int(tmp[1])))
+print(list)
 
-def func(a,b,c,punkt):
-    if(a*w[0][0]+b*w[0][1]+c)+(a*w[1][0]+b*punkt[1][1]+c)>0:
-        return True
-    else:
-        return False
-    print(func(-1,2,-3))
 
-def w():
-    a = 2
-    b = -3
-    c = 1
-    x1 = 1
-    y1 = 2
-    x2 = 3
-    y2 = 4
-    w = a * x1 + b * y1 + c
-    w = a * x2 + b * y2 + c
-    if (w > 0 and w > 0) or \
-            (w < 0 and w < 0):
-        return True
-    else:
-        return False
-wynik = w()
-print(wynik)
+
+# with open("punkty.txt","r") as file:
+    # i=file.readline()
+    # print(i)
+    # for j in range(10):
+    #     print(file.readline())
+    # for _ in file:
+    #     print(file.readline()
+# napisz funkcje sprawdzianjaca czy 2 pkt leza po tej samej stronie prostej, podajemy wartosci a b c rownaia oglnego prostej.
+# punkt=[(1,2),(3,4)]
+
+# def func(a,b,c,punkt):
+#     if(a*w[0][0]+b*w[0][1]+c)+(a*w[1][0]+b*punkt[1][1]+c)>0:
+#         return True
+#     else:
+#         return False
+#     print(func(-1,2,-3))
+#
+# def w():
+#     a = 2
+#     b = -3
+#     c = 1
+#     x1 = 1
+#     y1 = 2
+#     x2 = 3
+#     y2 = 4
+#     w = a * x1 + b * y1 + c
+#     w = a * x2 + b * y2 + c
+#     if (w > 0 and w > 0) or \
+#             (w < 0 and w < 0):
+#         return True
+#     else:
+#         return False
+# wynik = w()
+# print(wynik)
 
 # import math
 #
