@@ -8,6 +8,7 @@ print(list)
 
 
 
+
 # with open("punkty.txt","r") as file:
     # i=file.readline()
     # print(i)
