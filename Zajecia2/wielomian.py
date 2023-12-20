@@ -1,13 +1,15 @@
-list=[]
-with open("punkty.txt","r") as file:
-    t=int(file.readline())
-    for i in range(t):
-        tmp=file.readline().split()
-        list.append((int(tmp[0]),int(tmp[1])))
-print(list)
 
 
 
+
+
+# list=[]
+# with open("punkty.txt","r") as file:
+#     t=int(file.readline())
+#     for i in range(t):
+#         tmp=file.readline().split()
+#         list.append((int(tmp[0]),int(tmp[1])))
+# print(list)
 
 # with open("punkty.txt","r") as file:
     # i=file.readline()
@@ -16,6 +18,7 @@ print(list)
     #     print(file.readline())
     # for _ in file:
     #     print(file.readline()
+
 # napisz funkcje sprawdzianjaca czy 2 pkt leza po tej samej stronie prostej, podajemy wartosci a b c rownaia oglnego prostej.
 # punkt=[(1,2),(3,4)]
 
