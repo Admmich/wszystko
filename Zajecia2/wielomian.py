@@ -1,5 +1,43 @@
+#Napisz program pole obliczajace trojkota kotrymi wierzhcolakami ssa a b c sa nie wspolliniowe punkty xa ya xb yb mozeszy wyokozywzstac wzor jes to n 1 2 aasgsbSGB
+from math import fabs
+ pkt =[(1,1),(2,2),(3,0)]
+
+ a = fabs(-23)
+ print(a)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import matplotlib.pyplot as plt
+#
+# x = [i for i in range(-10, 10)]
+# y =[]
+# a=float(input("a ="))
+# b=float(input("b ="))
+# c=float(input("c ="))
+#
+# for i in x:
+#     y.append(a * i**2 + b * i *c)
+#
+# plt.plot(x, y)
+# plt.plot(x, y, 'ro')
+#
+# plt.grid(color='green', linesstyle="--", linewidth=1)
+#
+# plt.show
 
 
 
