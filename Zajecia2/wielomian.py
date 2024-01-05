@@ -1,19 +1,67 @@
+tmp = []
+with open('../punkty.txt', 'r') as file:
+    for i in file:
+        tmp.append(i.strip().strip())
 
+pkt = []
 
+for i in tmp:
+    t=[]
+    for j in i:
+        t.append(int(i))
+    p1=[t[0],t[1]]
+    p2 = [t[2],t[3]]
+    pkt.append([p1,p2])
+print(pkt)
 
+#--------------------------------
 
+# def ng(x1, y1, x2, y2, x3, y3) :
+#     return (y3-y1)*(x2-x1)-(y2-y1)*(x3-x1)
+#
+# def kratowe( pktA, pktB):
+#     licznik1 = 0
+#     licznik2 = 0
+#
+#     for i in range(pktA[0], pktB[0]+1):
+#         for j in range(pktA[0], pktB[1]+1):
+#             w = ng(pktA[0], pktA[1], pktB[0], pktB[1], i, j)
+#             if w < 0:
+#                 licznik1 += 1
+#             elif w > 0:
+#                 licznik2 += 1
+#     return [licznik1, licznik2]
+#
+# wynik = kratowe([1,1],[4,10])
+# print("Po jednej stronie prostej znajduje sie " , wynik[0], " punktow")
+# print("Po drugiej ", wynik[1], " punktow.")
+# wynik = [kratowe(i[0], i[1]) for i in pkt]
+#
+# print(wynik)
 
+#-----------------------------
 
+# A=[0,0]
+# B=[4,3]
+# for i in range(A[0],B[0]+1):
+#     for i in range(A[1],B[1]+1):
+#         print(1,5,2)
 
+#-----------------------------
 
-
-
-
-
-
-
-
-
+# def PktPoTejSamStr(A, B, C, P):
+#     return (A*P[0][0]+B*P[0][1]+C)*(A*P[1][0]+B*P[1][1]+C)>0
+#
+#
+# if __name__=='__main__':
+#     a = 77
+#     b = 2
+#     c = 3
+#     p = [(-1,-2),(-3,-4)]
+#     if PktPoTejSamStr(a,b,c,p):
+#         print("Punkty leza po tej samej stronie prostej.")
+#     else:
+#         print("Punkty nie leza po tej samej stronie prostej.")
 
 #-----------------------
 
@@ -67,15 +115,17 @@
 #----------------
 
 # napisz funkcje sprawdzianjaca czy 2 pkt leza po tej samej stronie prostej, podajemy wartosci a b c rownaia oglnego prostej.
-# punkt=[(1,2),(3,4)]
+#punkt=[(1,2),(3,4)]
 
 # def func(a,b,c,punkt):
-#     if(a*w[0][0]+b*w[0][1]+c)+(a*w[1][0]+b*punkt[1][1]+c)>0:
+#     if(a*punkt[0][0]+b*punkt[0][1]+c)+(a*punkt[1][0]+b*punkt[1][1]+c)>0:
 #         return True
 #     else:
 #         return False
-#     print(func(-1,2,-3))
-#
+#     print(func(1,2,3))
+
+#---------------------------------
+
 # def w():
 #     a = 2
 #     b = -3
@@ -162,10 +212,8 @@
 
 # from random import choices
 #
-#
 # def los(n):
 #     return choices((1, 2, 3, 4, 5, 6), k=n)
-#
 #
 # def rzut(pkt, rzut_kostka):
 #     if rzut_kostka == 6:
