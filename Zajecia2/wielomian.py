@@ -1,18 +1,51 @@
-tmp = []
-with open('../punkty.txt', 'r') as file:
-    for i in file:
-        tmp.append(i.strip().strip())
+#Napisz program, ktory wczyta tekst oraz wzorzec,zapisane malymi literami alfabetu lacinskiego, a nastepnie wyszuka wzorzec w tekscie, stosujac algorytm naiwny .
+#W programie utworz funkcje funkcji znajdz.
 
-pkt = []
+def znajdz(w, t):
+    dw = len(w)
+    dt = len(t)
+    p = 0
+    while p <= dt - dw:
+        i = 0
+        while i<dw and w[i]==t[p+i]:
+            i+=1
+        if i == dw:
+            return p
+        else:
+            p+=1
+    return -1
 
-for i in tmp:
-    t=[]
-    for j in i:
-        t.append(int(i))
-    p1=[t[0],t[1]]
-    p2 = [t[2],t[3]]
-    pkt.append([p1,p2])
-print(pkt)
+#----------------------
+#tekst= 'fgagagagaga'
+#wzorzec= 'gfaa'
+
+# def func(tekst,wzorzec):
+#     dlg_tekst = len(tekst)
+#     dlg_wzorzec = len(wzorzec)
+#     for i in range(dlg_tekst-dlg_wzorzec+1):
+#         if tekst[i:i+dlg_wzorzec]  == wzorzec:
+#             return True
+#         return False
+# result = func(tekst,wzorzec)
+# print(result)
+
+ #-------------------------------------
+
+# tmp = []
+# with open('../punkty.txt', 'r') as file:
+#     for i in file:
+#         tmp.append(i.strip().strip())
+#
+# pkt = []
+#
+# for i in tmp:
+#     t=[]
+#     for j in i:
+#         t.append(int(i))
+#     p1=[t[0],t[1]]
+#     p2 = [t[2],t[3]]
+#     pkt.append([p1,p2])
+# print(pkt)
 
 #--------------------------------
 
@@ -105,12 +138,12 @@ print(pkt)
 #--------------
 
 # with open("punkty.txt","r") as file:
-    # i=file.readline()
-    # print(i)
-    # for j in range(10):
-    #     print(file.readline())
-    # for _ in file:
-    #     print(file.readline()
+#     i=file.readline()
+#     print(i)
+#     for j in range(10):
+#         print(file.readline())
+#     for _ in file:
+#         print(file.readline()
 
 #----------------
 
