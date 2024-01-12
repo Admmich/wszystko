@@ -1,0 +1,22 @@
+napisz program sprawdzajacy czy dla prostej o ptk a i b mozna zbudwac trojjkat podajac punkt c dane pobierz z pliku tekstowego
+
+
+
+
+list=[]
+with open("punkty.txt","r") as file:
+     t=int(file.readline())
+     for i in range(t):
+         tmp=file.readline().split()
+         list.append((int(tmp[0]),int(tmp[1])))
+	return True
+     else:
+         return False
+wynik = w()
+print(wynik)
+
+podaje dane 1
+2
+
+
+
