@@ -1,17 +1,70 @@
-lt = []
-lw = []
-def func1(wzorzec, tekst):
-    for i in range(len(tekst)):
-        lt.append(ord(tekst[i]))
-        sum(lt)
-    for i in range(len(wzorzec)):
-        lw.append(ord(wzorzec[i]))
-        sum(lw)
-print(func1(wzorzec,tekst))
+from random import randint
+
+
+def los(n,m):
+    lista=[]
+    for i in range(n):
+        tmp = []
+        for j in range(m):
+            tmp.append(randint(1,3))
+        lista.append(tmp)
+    return lista
+
+def wypisz(t):
+    for i in t:
+        for j in i:
+            print(j,end=" ")
+        print()
+
+
+
+def sumawierszy(t):
+    sw=[]
+    for i in t:
+        suma = 0
+        for j in i:
+            suma += j
+        sw.append(suma)
+    return sw
+
+
+def sumakolumny(t):
+    sk=[]
+    for i in range(len(t[0])):
+        suma=0
+        for j in range(len(t)):
+            suma += t[j][i]
+        sk.append(suma)
+    return sk
 
 
 
 
+a = los(3,3)
+wypisz(a)
+
+def res(a):
+    kol = sumakolumny(a)
+    wie = sumawierszy(a)
+    for i in range(3):
+        if wie[i] == kol[i]:
+            return i
+    return "BRAK"
+
+print(res(a))
+
+#----------------------------------------------------
+
+# lt = []
+# lw = []
+# def func1(wzorzec, tekst):
+#     for i in range(len(tekst)):
+#         lt.append(ord(tekst[i]))
+#         sum(lt)
+#     for i in range(len(wzorzec)):
+#         lw.append(ord(wzorzec[i]))
+#         sum(lw)
+# print(func1(wzorzec,tekst))
 
 #-------------------------------------
 
