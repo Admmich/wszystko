@@ -1,60 +1,74 @@
-from random import randint
+def Kop( i, j):
+    if i or j:
+        return Kop
+    k1 = Kop(i + 1, j)
+    k2 = Kop(i, j + 1)
+    if k1 > k2:
+        return [i][j] + k1
+    else:
+        return [i][j] + k2
+i = 2
+j = 2
+wynik = Kop(i, j)
+print("Maksymalna", wynik)
 
+#-------------------------------------------
 
-def los(n,m):
-    lista=[]
-    for i in range(n):
-        tmp = []
-        for j in range(m):
-            tmp.append(randint(1,3))
-        lista.append(tmp)
-    return lista
+# from random import randint
+#
+#
+# def los(n,m):
+#     lista=[]
+#     for i in range(n):
+#         tmp = []
+#         for j in range(m):
+#             tmp.append(randint(1,3))
+#         lista.append(tmp)
+#     return lista
+#
+# def wypisz(t):
+#     for i in t:
+#         for j in i:
+#             print(j,end=" ")
+#         print()
+#
+#
+#
+# def sumawierszy(t):
+#     sw=[]
+#     for i in t:
+#         suma = 0
+#         for j in i:
+#             suma += j
+#         sw.append(suma)
+#     return sw
+#
+#
+# def sumakolumny(t):
+#     sk=[]
+#     for i in range(len(t[0])):
+#         suma=0
+#         for j in range(len(t)):
+#             suma += t[j][i]
+#         sk.append(suma)
+#     return sk
+#
+#
+#
+#
+# a = los(3,3)
+# wypisz(a)
+#
+# def res(a):
+#     kol = sumakolumny(a)
+#     wie = sumawierszy(a)
+#     for i in range(3):
+#         if wie[i] == kol[i]:
+#             return i
+#     return "BRAK"
+#
+# print(res(a))
 
-def wypisz(t):
-    for i in t:
-        for j in i:
-            print(j,end=" ")
-        print()
-
-
-
-def sumawierszy(t):
-    sw=[]
-    for i in t:
-        suma = 0
-        for j in i:
-            suma += j
-        sw.append(suma)
-    return sw
-
-
-def sumakolumny(t):
-    sk=[]
-    for i in range(len(t[0])):
-        suma=0
-        for j in range(len(t)):
-            suma += t[j][i]
-        sk.append(suma)
-    return sk
-
-
-
-
-a = los(3,3)
-wypisz(a)
-
-def res(a):
-    kol = sumakolumny(a)
-    wie = sumawierszy(a)
-    for i in range(3):
-        if wie[i] == kol[i]:
-            return i
-    return "BRAK"
-
-print(res(a))
-
-
-#afafafa
 #----------------------------------------------------
 
 # lt = []
@@ -297,6 +311,67 @@ print(res(a))
 #     print(x)
 
 #------------------------
+
+# # import funNewtonRaphson
+# from funNewtonRaphson import newtonraphson as fun
+# # print(funNewtonRaphson.newtonrapshon(16, 0.00000000000001))
+# print(fun(72,0.000000000001)
+
+#
+# lista=[[],[]]
+# wyr = '1 * 2 * (3 + 4)'
+#
+# for i in wyr:
+#     if ord(i) <= 57 and ord(i) >= 48 :
+#         lista[0].append(i)
+#     else:
+#         lista[1].append(i)
+#
+# print(lista)
+
+#----------------------------------------
+
+# wyr = "1+2+3+5"
+# liczby = []
+# operat = []
+# onp = []
+# for znak in wyr:
+#     if ord(znak) <= 57 and ord(znak) >= 48:
+#         liczby.append(znak)
+#     else:
+#         operat.append(znak)
+#     if len(liczby) == 2 :
+#         onp.append(operat[0])
+#         operat.pop(0)
+#         liczby.clear()
+#     elif len(operat):
+#         onp.append(operat[0])
+#         operat.pop(0)
+#         liczby.clear()
+#     print("ONP=", onp, "Liczby", liczby, "Operatorzy", operat)
+#
+# onp.append(operat[-1])
+#
+# print("ONP=",onp, "Liczby",liczby, "Operatorzy", operat)
+
+#-----------------------------------------------
+
+import math
+# def newtonraphson(n, eps=0.001):
+#     a = 1.0
+#     b = n
+#     while(math.fabs( a - b) >= eps):
+#         a = (a+b) / 2
+#         b= n / a
+#     result = b
+#     return result
+#
+# def potega(n, m):
+#     for i in range (n):
+#         n=n*i
+#         print(n)
+
+#------------------------------
 
 # def BinToFloat(n, ileBit=0):
 #     wynik = 0
