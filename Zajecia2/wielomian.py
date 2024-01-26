@@ -1,16 +1,25 @@
-def Kop( i, j):
-    if i or j:
-        return Kop
-    k1 = Kop(i + 1, j)
-    k2 = Kop(i, j + 1)
-    if k1 > k2:
-        return [i][j] + k1
+def szyfruj(w, s, m, k, klucz, n=1):
+    if n + k - 1 < m:
+        for i in range(1, k+1):
+            s += w[n+klucz[i]-1]
+        szyfruj(w, s, m, k, klucz, n+k)
     else:
-        return [i][j] + k2
-i = 2
-j = 2
-wynik = Kop(i, j)
-print("Maksymalna", wynik)
+        while n<=m:
+            if n<m:
+                s = w[n+1]+ w[n]
+                n = 2
+            else:
+                s = w[n]
+                n = 1
+
+wtekst = "kolorado"
+szyfrpro = ""
+mdlugosc = len(wtekst)
+kliczba = 3
+klucztablica = [2, 3, 1]
+
+szyfruj(wtekst, szyfrpro, mdlugosc, kliczba, klucztablica)
+print("szyfrpro:", szyfrpro)
 
 #-------------------------------------------
 
