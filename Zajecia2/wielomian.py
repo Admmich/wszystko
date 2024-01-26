@@ -12,7 +12,7 @@ def szyfruj(w, s, m, k, klucz, n=1):
                 s = w[n]
                 n = 1
 
-wtekst = "kolorado"
+wtekst = "olkraood"
 szyfrpro = ""
 mdlugosc = len(wtekst)
 kliczba = 3
@@ -20,7 +20,7 @@ klucztablica = [2, 3, 1]
 
 szyfruj(wtekst, szyfrpro, mdlugosc, kliczba, klucztablica)
 print("szyfrpro:", szyfrpro)
-
+😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍👓🐱‍👓🐱‍👓🐱‍👓🐱‍👓🐱‍👓
 #-------------------------------------------
 
 # from random import randint
