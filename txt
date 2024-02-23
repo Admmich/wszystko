@@ -116,6 +116,7 @@ CREATE TABLE uczniowe (
     PRIMARY KEY (id_ucznia)   
 );
 
+------------------------------------------------------------------
 
 CREATE TABLE daneuczniowe (
     id INT NOT NULL AUTO_INCREMENT,
@@ -129,6 +130,7 @@ CREATE TABLE daneuczniowe (
     FOREIGN KEY (id_ucznia) REFERENCES uczniowe (id_ucznia)
 );
 
+----------------------------------------------------------------
 
 dodaje do kolumny 
 INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
@@ -136,9 +138,73 @@ INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
     ('Janw', 'Kowa2lski', '12345578901')
 ;
 
+--------------------------------------------------------------------
 
 sprawdza
 SELECT *
 FROM uczniowe:
 
+---------------------------------------------------------------------
 
+CREATE TABLE przedmioty (
+    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nazwa_przedmiotu VARCHAR(35) NOT NULL,
+    nazwa_przedmiotu_sktucona VARCHAR(5) NOT NULL
+);
+
+INSERT INTO przedmiot(nazwa_przedmiotu, nazwa_przedmiotu_sktucona) VALUES
+	('matematyka', 'mat'),
+    ('jezyk polski', 'pol'),
+    ('wychowanie fizyczne', 'wf')
+;
+
+----------------------------------------------------------------------------
+CREATE TABLE przedmioty (
+    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nazwisko VARCHAR(50) NOT NULL,
+    imie VARCHAR(15) NOT NULL,
+    inicjaly VARCHAR(3) NOT NULL
+);
+
+---------------------------------------------------------------------------------
+
+CREATE TABLE przedmioty (
+    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nazwisko VARCHAR(50) NOT NULL,
+    imie VARCHAR(15) NOT NULL,
+    inicjaly VARCHAR(3) NOT NULL
+);
+
+INSERT INTO nauczyciele(nazwisko, imie, inicjaly) VALUES
+	('Kowalki', 'Jan', 'KJ'),
+    ('Swalki', 'Jon', 'SJ'),
+    ('Srwalki', 'Kan', 'SK'),
+;
+
+---------------------------------------------------------------------------------------
+
+CREATE TABLE oceny(
+    id_oceny INT AUTO_INCREMENT NOT NULL,
+    id_ucznia INT NOT NULL,
+    id_przedmiotu INT NOT NULL,
+    id_nauczyciela INT NOT NULL,
+    ocena INT NOT NULL,
+    PRIMARY KEY (id_oceny),
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(id_ucznia),
+    FOREIGN KEY (id_przedmiotu) REFERENCES przedmioty(id_przedmiotu),
+    FOREIGN KEY (id_nauczyciela) REFERENCES przedmioty(ocena)
+
+------------------------------------------------------------------------------------
+
+INSERT INTO oceny(id_ucznia, id_przedmiotu, id_nauczyciela, ocena) VALUES
+	(1,1,1,4),
+    (1,1,1,1),
+    (1,1,1,5),
+    (1,1,1,4),
+    (1,1,1,5),
+    (1,1,1,4),
+    (1,1,1,1),
+    (1,1,1,2)
+;
+
+---------------------------------------------------------------------------------------------------
