@@ -208,3 +208,18 @@ INSERT INTO oceny(id_ucznia, id_przedmiotu, id_nauczyciela, ocena) VALUES
 ;
 
 ---------------------------------------------------------------------------------------------------
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko ASC;
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko DESC;
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko ASC;
+LIMIT 1;
+
+-----------------------------------------------------------------------------------------------------------
