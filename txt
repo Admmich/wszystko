@@ -6,7 +6,7 @@ CREATE DATABASE bazaklasowa DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_poli
 
 usuba baze danych
 DROP DATABASE bazaszkolna;
--------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE DATABASE bazaszkolna;
 CREATE DATABASE bazaklasowa DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_polish_ci;
 CREATE DATABASE bazaukraiska DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_polish_ci;
@@ -14,7 +14,7 @@ DROP DATABASE bazaklasowa;
 DROP DATABASE bazaszkolna;
 CREATE DATABASE bazasklepowe DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_polish_ci;
 DROP DATABASE bazaukraiska;
--------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 tworzac table w bazie danych dodajemy dla roznego typu dla kazdej kolumnie 
 
@@ -116,7 +116,7 @@ CREATE TABLE uczniowe (
     PRIMARY KEY (id_ucznia)   
 );
 
-------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 CREATE TABLE daneuczniowe (
     id INT NOT NULL AUTO_INCREMENT,
@@ -130,7 +130,7 @@ CREATE TABLE daneuczniowe (
     FOREIGN KEY (id_ucznia) REFERENCES uczniowe (id_ucznia)
 );
 
-----------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 dodaje do kolumny 
 INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
@@ -138,13 +138,13 @@ INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
     ('Janw', 'Kowa2lski', '12345578901')
 ;
 
---------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 
 sprawdza
 SELECT *
 FROM uczniowe:
 
----------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 CREATE TABLE przedmioty (
     id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -158,7 +158,7 @@ INSERT INTO przedmiot(nazwa_przedmiotu, nazwa_przedmiotu_sktucona) VALUES
     ('wychowanie fizyczne', 'wf')
 ;
 
-----------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 CREATE TABLE przedmioty (
     id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     nazwisko VARCHAR(50) NOT NULL,
@@ -166,7 +166,7 @@ CREATE TABLE przedmioty (
     inicjaly VARCHAR(3) NOT NULL
 );
 
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE przedmioty (
     id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -181,7 +181,7 @@ INSERT INTO nauczyciele(nazwisko, imie, inicjaly) VALUES
     ('Srwalki', 'Kan', 'SK'),
 ;
 
----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE oceny(
     id_oceny INT AUTO_INCREMENT NOT NULL,
@@ -194,7 +194,7 @@ CREATE TABLE oceny(
     FOREIGN KEY (id_przedmiotu) REFERENCES przedmioty(id_przedmiotu),
     FOREIGN KEY (id_nauczyciela) REFERENCES przedmioty(ocena)
 
-------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO oceny(id_ucznia, id_przedmiotu, id_nauczyciela, ocena) VALUES
 	(1,1,1,4),
@@ -207,7 +207,7 @@ INSERT INTO oceny(id_ucznia, id_przedmiotu, id_nauczyciela, ocena) VALUES
     (1,1,1,2)
 ;
 
----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 
 SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
 FROM uczniowe
@@ -222,4 +222,23 @@ FROM uczniowe
 ORDER BY uczniowe.nazwisko ASC;
 LIMIT 1;
 
------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE klasy (
+  	id_klasy INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_ucznia INT NOT NULL,
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(id_ucznia)
+);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE klasy ADD (
+    nazwa_klasy VARCHAR(30) NOT NULL,
+    nazwa_klasy_skr VARCHAR(4) 
+);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE uczniowe ADD id_klasy FOREIGN KEY (id_klasy) REFERENCES klasy(id_klasy;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
