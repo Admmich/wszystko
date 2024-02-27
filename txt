@@ -242,3 +242,9 @@ ALTER TABLE klasy ADD (
 ALTER TABLE uczniowe ADD id_klasy FOREIGN KEY (id_klasy) REFERENCES klasy(id_klasy;
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO klasy (klasy.nazwa_klasy, klasy.nazwa_klasy_skr) VALUES
+	('1 a matematyczna', '1a'),
+    ('1 b pol', '1b'),
+    ('1 c biol', '1c')
+;
