@@ -248,3 +248,21 @@ INSERT INTO klasy (klasy.nazwa_klasy, klasy.nazwa_klasy_skr) VALUES
     ('1 b pol', '1b'),
     ('1 c biol', '1c')
 ;
+
+-----------------------------------------
+
+UPDATE uczniowe SET uczniowe.ID_ucznia=3 WHERE uczniowe.ID_ucznia=2;
+
+-------------------------------------------------------------------------------------
+
+INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
+	('Pior', 'Toalki', '12345221101'),
+    ('Alan', 'Koaski', '11345578904'),
+    ('Pawel', 'Ksi', '11345571904'),
+    ('Maja', 'Kski', '11345878904'),
+    ('Adam', 'Koas', '11345578904'),
+    ('Stas', 'Kos', '14345578904'),
+    ('Ola', 'Koasi', '11335578904'),
+    ('Amelia', 'Koask', '11325578904'),
+    ('Mikołaj', 'Koski', '11345578904'),
+    ('Aden', 'Oaski', '11341578904')
