@@ -168,11 +168,14 @@ CREATE TABLE przedmioty (
 
 -------------------------------------------------------------------------------------------------------------------
 
-CREATE TABLE przedmioty (
-    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    nazwisko VARCHAR(50) NOT NULL,
-    imie VARCHAR(15) NOT NULL,
-    inicjaly VARCHAR(3) NOT NULL
+CREATE TABLE nauczyciele (
+    id_nauczyciela INT NOT NULL AUTO_INCREMENT,
+    nazwisko VARCHAR(15),
+    imie VARCHAR(15),
+    inicjaly VARCHAR(30),
+    id_nauczyciela INT,
+    PRIMARY KEY (id_nauczyciela),
+    FOREIGN KEY (id_nauczyciela ) REFERENCES nauczyciele (id_nauczyciela)
 );
 
 INSERT INTO nauczyciele(nazwisko, imie, inicjaly) VALUES
@@ -182,7 +185,6 @@ INSERT INTO nauczyciele(nazwisko, imie, inicjaly) VALUES
 ;
 
 -------------------------------------------------------------------------------------------------------------------------
-
 CREATE TABLE oceny(
     id_oceny INT AUTO_INCREMENT NOT NULL,
     id_ucznia INT NOT NULL,
@@ -190,9 +192,8 @@ CREATE TABLE oceny(
     id_nauczyciela INT NOT NULL,
     ocena INT NOT NULL,
     PRIMARY KEY (id_oceny),
-    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(id_ucznia),
-    FOREIGN KEY (id_przedmiotu) REFERENCES przedmioty(id_przedmiotu),
-    FOREIGN KEY (id_nauczyciela) REFERENCES przedmioty(ocena)
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(ID_ucznia)
+);
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -249,11 +250,11 @@ INSERT INTO klasy (klasy.nazwa_klasy, klasy.nazwa_klasy_skr) VALUES
     ('1 c biol', '1c')
 ;
 
------------------------------------------
+----------------------------------------------------------------------------------------------------------
 
 UPDATE uczniowe SET uczniowe.ID_ucznia=3 WHERE uczniowe.ID_ucznia=2;
 
--------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
 INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
 	('Pior', 'Toalki', '12345221101'),
@@ -266,3 +267,20 @@ INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
     ('Amelia', 'Koask', '11325578904'),
     ('Mikołaj', 'Koski', '11345578904'),
     ('Aden', 'Oaski', '11341578904')
+
+--------------------------------------------------------------------------------------------------------
+
+SELECT uczniowe.imie, uczniowe.nazwisko, klasy.nazwa_klasy_skr
+FROM uczniowe
+INNER JOIN klasy ON uczniowe.id_klasy = klasy.id_klasy;
+
+-------------------------------------------------------------------------------------------------------
+
+ALTER TABLE uczniowe ADD id_klasy INT
+
+-------------
+
+SELECT uczniowe.imie, uczniowe.nazwisko, klasy.nazwa_klasy_skr
+FROM uczniowe
+INNER JOIN klasy ON uczniowe.id_klasy = klasy.id_klasy
+ORDER BY klasy.nazwa_klasy_skr
