@@ -284,3 +284,39 @@ SELECT uczniowe.imie, uczniowe.nazwisko, klasy.nazwa_klasy_skr
 FROM uczniowe
 INNER JOIN klasy ON uczniowe.id_klasy = klasy.id_klasy
 ORDER BY klasy.nazwa_klasy_skr
+
+---------------------------------------------------
+
+SELECT COUNT(uczniowe.ID_ucznia) AS 'liczba uczniow  w szkole'
+FROM uczniowe;
+
+----------------------------------------------------------------------------------------
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+GROUP BY klasy.nazwa_klasy_skr
+
+---------------------------------------------------------------------------
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a'
+GROUP BY klasy.nazwa_klasy_skr;
+
+-----------------------------------------------
+
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie = 'Zawisza' OR uczniowe.imie = 'Kuba' OR uczniowe.imie = 'Barnaba'
+GROUP BY klasy.nazwa_klasy_skr;
+
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie in ('Zawisza', 'Kuba', 'Barnaba')
+GROUP BY klasy.nazwa_klasy_skr;
