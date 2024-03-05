@@ -320,3 +320,10 @@ FROM klasy
 INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
 WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie in ('Zawisza', 'Kuba', 'Barnaba')
 GROUP BY klasy.nazwa_klasy_skr;
+
+---------------------------------------------------------
+
+SELECT uczniowe.nazwisko, uczniowe.imie, AVG(oceny) AS "średnia ocen"
+FROM oceny 
+JOIN uczniowe ON uczniowe.ID_ucznia = oceny.id_ucznia
+WHERE uczniowe.ID_ucznia = 1; 
