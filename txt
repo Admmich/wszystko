@@ -1,0 +1,329 @@
+tworzenie bazy danych
+CREATE DATABASE bazaszkolna;
+
+zrobi baze i zmienia utf
+CREATE DATABASE bazaklasowa DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_polish_ci;
+
+usuba baze danych
+DROP DATABASE bazaszkolna;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DATABASE bazaszkolna;
+CREATE DATABASE bazaklasowa DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_polish_ci;
+CREATE DATABASE bazaukraiska DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_polish_ci;
+DROP DATABASE bazaklasowa;
+DROP DATABASE bazaszkolna;
+CREATE DATABASE bazasklepowe DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_polish_ci;
+DROP DATABASE bazaukraiska;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+tworzac table w bazie danych dodajemy dla roznego typu dla kazdej kolumnie 
+
+char(x) od stala dlgosc 0 do 255
+varchair(x) od zmienna dlgosc 0 do 255
+tynyblob,tinytext ladcuch od 0 do 255
+blox, text ladcuch od 0 do 65535
+mediumblob,mediumtext ladcuch 0 do 16777215
+longblob,longtext ladcuch od 0 do 4294967295
+
+
+date rozmiar w bajtach 3 
+datetime rozmiar w bajtach 8
+timestamp rozmiar w bajtach 4
+time rozmiar w bajtach 3
+year rozmiar w bajtach 1
+
+ 
+Typ
+TINYINT (ze znakiem)
+TINYINT (bez znaku)
+SMALLINT (ze znakiem)
+SMALLINT (bez znaku)
+MEDIUMINT (ze znakiem)
+MEDIUMINT (bez znaku)
+INT (ze znakiem)
+BIGINT (ze znakiem)
+Rozmiar w bajtach
+1
+1
+2
+2
+3
+3
+4
+4
+8
+Wartość minimalna
+-128
+0
+-32768
+0
+-8388608
+0
+-2147483648
+0
+-9223372036854775808
+Wartość maksymalna
+127
+255
+32767
+65535
+8388607
+16777215
+2147483647
+4294967295
+9223372036854775807
+
+
+
+
+TYPY NUMERYCZNE
+Typ 
+Rozmiar w bajtach 
+Wartosó minimalna 
+Wartosó maksymalna
+127
+  -128 
+TINYINT (ze znakiem) 255
+TINYINT (bez znaku) -32768 32767
+SMALLINT (ze znakiem) 2
+2 65535
+SMALLINT (bez znaku) 3 -8388608 8388607
+MEDIUMINT (ze znakiem) 16777215
+MEDIUMINT (bez znaku) 3
+4 -2147483648 2147483647
+INT (ze znakiem) 4294967295
+INT (bez znaku) 4 -9223372036854775808 9223372036854775807
+BIGINT (ze znakiem) 8  
+   18446744073709551615
+BIGINT (bez znaku) 8 wyzerowane wszystkie bity ustawione wszystkie bity
+BIT (X) okolo (x+7)/8 -1038-1 1038-1
+DECIMAL (S,p), NUMERIC(S,p) 4 1,79E+308 1,79E+308
+FLOAT
+DOUBLE [PRECISION], REAL 8 -3,40E+38 3,40E+38
+
+kekma.ga
+
+
+
+
+
+tworzenie nowej tabeli 
+CREATE TABLE uczniowe (
+    ID_ucznia INT NOT NULL AUTO_INCREMENT,
+    imie VARCHAR(15) NOT NULL,
+    nazwisko VARCHAR(55) NOT NULL,
+    PESEL VARCHAR(11) NOT NULL,
+    PRIMARY KEY (id_ucznia)   
+);
+
+----------------------------------------------------------------------------------------------------
+
+CREATE TABLE daneuczniowe (
+    id INT NOT NULL AUTO_INCREMENT,
+    imiematki VARCHAR(15),
+    imieojca VARCHAR(15),
+    miejscowosc VARCHAR(30),
+    kodpocztow VARCHAR(6),
+    adres VARCHAR(50),
+    id_ucznia INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe (id_ucznia)
+);
+
+--------------------------------------------------------------------------------------------------
+
+dodaje do kolumny 
+INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
+	('Jan', 'Kowalski', '12345678901'),
+    ('Janw', 'Kowa2lski', '12345578901')
+;
+
+------------------------------------------------------------------------------------------------------
+
+sprawdza
+SELECT *
+FROM uczniowe:
+
+-------------------------------------------------------------------------------------------------------
+
+CREATE TABLE przedmioty (
+    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nazwa_przedmiotu VARCHAR(35) NOT NULL,
+    nazwa_przedmiotu_sktucona VARCHAR(5) NOT NULL
+);
+
+INSERT INTO przedmiot(nazwa_przedmiotu, nazwa_przedmiotu_sktucona) VALUES
+	('matematyka', 'mat'),
+    ('jezyk polski', 'pol'),
+    ('wychowanie fizyczne', 'wf')
+;
+
+--------------------------------------------------------------------------------------------------------------
+CREATE TABLE przedmioty (
+    id_przedmiotu INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nazwisko VARCHAR(50) NOT NULL,
+    imie VARCHAR(15) NOT NULL,
+    inicjaly VARCHAR(3) NOT NULL
+);
+
+-------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE nauczyciele (
+    id_nauczyciela INT NOT NULL AUTO_INCREMENT,
+    nazwisko VARCHAR(15),
+    imie VARCHAR(15),
+    inicjaly VARCHAR(30),
+    id_nauczyciela INT,
+    PRIMARY KEY (id_nauczyciela),
+    FOREIGN KEY (id_nauczyciela ) REFERENCES nauczyciele (id_nauczyciela)
+);
+
+INSERT INTO nauczyciele(nazwisko, imie, inicjaly) VALUES
+	('Kowalki', 'Jan', 'KJ'),
+    ('Swalki', 'Jon', 'SJ'),
+    ('Srwalki', 'Kan', 'SK'),
+;
+
+-------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE oceny(
+    id_oceny INT AUTO_INCREMENT NOT NULL,
+    id_ucznia INT NOT NULL,
+    id_przedmiotu INT NOT NULL,
+    id_nauczyciela INT NOT NULL,
+    ocena INT NOT NULL,
+    PRIMARY KEY (id_oceny),
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(ID_ucznia)
+);
+
+----------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO oceny(id_ucznia, id_przedmiotu, id_nauczyciela, ocena) VALUES
+	(1,1,1,4),
+    (1,1,1,1),
+    (1,1,1,5),
+    (1,1,1,4),
+    (1,1,1,5),
+    (1,1,1,4),
+    (1,1,1,1),
+    (1,1,1,2)
+;
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko ASC;
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko DESC;
+
+SELECT uczniowe.ID_ucznia, uczniowe.imie, uczniowe.nazwisko
+FROM uczniowe
+ORDER BY uczniowe.nazwisko ASC;
+LIMIT 1;
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE klasy (
+  	id_klasy INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_ucznia INT NOT NULL,
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowe(id_ucznia)
+);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE klasy ADD (
+    nazwa_klasy VARCHAR(30) NOT NULL,
+    nazwa_klasy_skr VARCHAR(4) 
+);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE uczniowe ADD id_klasy FOREIGN KEY (id_klasy) REFERENCES klasy(id_klasy;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO klasy (klasy.nazwa_klasy, klasy.nazwa_klasy_skr) VALUES
+	('1 a matematyczna', '1a'),
+    ('1 b pol', '1b'),
+    ('1 c biol', '1c')
+;
+
+----------------------------------------------------------------------------------------------------------
+
+UPDATE uczniowe SET uczniowe.ID_ucznia=3 WHERE uczniowe.ID_ucznia=2;
+
+-------------------------------------------------------------------------------------------------------------
+
+INSERT INTO uczniowe (imie, nazwisko, PESEL) VALUES
+	('Pior', 'Toalki', '12345221101'),
+    ('Alan', 'Koaski', '11345578904'),
+    ('Pawel', 'Ksi', '11345571904'),
+    ('Maja', 'Kski', '11345878904'),
+    ('Adam', 'Koas', '11345578904'),
+    ('Stas', 'Kos', '14345578904'),
+    ('Ola', 'Koasi', '11335578904'),
+    ('Amelia', 'Koask', '11325578904'),
+    ('Mikołaj', 'Koski', '11345578904'),
+    ('Aden', 'Oaski', '11341578904')
+
+--------------------------------------------------------------------------------------------------------
+
+SELECT uczniowe.imie, uczniowe.nazwisko, klasy.nazwa_klasy_skr
+FROM uczniowe
+INNER JOIN klasy ON uczniowe.id_klasy = klasy.id_klasy;
+
+-------------------------------------------------------------------------------------------------------
+
+ALTER TABLE uczniowe ADD id_klasy INT
+
+-------------
+
+SELECT uczniowe.imie, uczniowe.nazwisko, klasy.nazwa_klasy_skr
+FROM uczniowe
+INNER JOIN klasy ON uczniowe.id_klasy = klasy.id_klasy
+ORDER BY klasy.nazwa_klasy_skr
+
+---------------------------------------------------
+
+SELECT COUNT(uczniowe.ID_ucznia) AS 'liczba uczniow  w szkole'
+FROM uczniowe;
+
+----------------------------------------------------------------------------------------
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+GROUP BY klasy.nazwa_klasy_skr
+
+---------------------------------------------------------------------------
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a'
+GROUP BY klasy.nazwa_klasy_skr;
+
+-----------------------------------------------
+
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie = 'Zawisza' OR uczniowe.imie = 'Kuba' OR uczniowe.imie = 'Barnaba'
+GROUP BY klasy.nazwa_klasy_skr;
+
+
+SELECT klasy.nazwa_klasy_skr, COUNT(uczniowe.id_klasy) AS 'ilosc ucziow  w klasie'
+FROM klasy
+INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
+WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie in ('Zawisza', 'Kuba', 'Barnaba')
+GROUP BY klasy.nazwa_klasy_skr;
+
+---------------------------------------------------------
+
+SELECT uczniowe.nazwisko, uczniowe.imie, AVG(oceny) AS "średnia ocen"
+FROM oceny 
+JOIN uczniowe ON uczniowe.ID_ucznia = oceny.id_ucznia
+WHERE uczniowe.ID_ucznia = 1; 
