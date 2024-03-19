@@ -321,9 +321,37 @@ INNER JOIN uczniowe ON klasy.id_klasy =uczniowe.id_klasy
 WHERE uczniowe.imie NOT LIKE '%a' OR uczniowe.imie in ('Zawisza', 'Kuba', 'Barnaba')
 GROUP BY klasy.nazwa_klasy_skr;
 
----------------------------------------------------------
 
-SELECT uczniowe.nazwisko, uczniowe.imie, AVG(oceny) AS "średnia ocen"
-FROM oceny 
-JOIN uczniowe ON uczniowe.ID_ucznia = oceny.id_ucznia
-WHERE uczniowe.ID_ucznia = 1; 
+
+
+SELECT *FROM uczniowie;
+
+SELECT * FROM uczniowie WHERE imie LIKE '%a' AND imie <> 'Kuba';
+
+SELECT * FROM uczniowie WHERE imie NOT LIKE '%a' OR imie  = 'Kuba';
+
+SELECT * FROM uczniowie WHERE data_urodzenia BETWEEN '2006-01-01' AND '2006-12-12';
+
+
+INSERT INTO uczniowie (imie, nazwisko, data_urodzenia) VALUES
+	('Franciszek', 'Nowak', '2008-09-01')
+
+
+SELECT uczniowie.nazwisko, uczniowie.imie, klasy.nazwa_klasy_skrocona
+FROM uczniowie
+INNER JOIN uczniowie_klasy ON uczniowie_klasy.id_ucznia = uczniowie.id_ucznia
+INNER JOIN klasy ON klasy.id_klasy = uczniowie_klasy.id_klasy
+WHERE klasy.nazwa_klasy_skrocona = '1a' OR klasy.nazwa_klasy_skrocona = '1b' OR klasy.nazwa_klasy_skrocona = '1c'
+
+
+
+
+
+SELECT uczniowie.nazwisko, uczniowie.imie, klasy.nazwa_klasy_skrocona
+FROM uczniowie
+INNER JOIN uczniowie_klasy ON uczniowie_klasy.id_ucznia = uczniowie.id_ucznia
+INNER JOIN klasy ON klasy.id_klasy = uczniowie_klasy.id_klasy
+WHERE klasy.nazwa_klasy_skrocona = '1a' OR klasy.nazwa_klasy_skrocona = '1b' OR klasy.nazwa_klasy_skrocona = '1c'
+ORDER BY klasy.nazwa_klasy_skrocona DESC, uczniowie.nazwisko;
+
+
