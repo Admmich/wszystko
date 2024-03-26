@@ -355,3 +355,80 @@ WHERE klasy.nazwa_klasy_skrocona = '1a' OR klasy.nazwa_klasy_skrocona = '1b' OR 
 ORDER BY klasy.nazwa_klasy_skrocona DESC, uczniowie.nazwisko;
 
 
+SELECT COUNT(klasy.nazwa_klasy_skrocona) AS 'ilosc uczkiow'
+FROM uczniowie
+INNER JOIN uczniowie_klasy ON uczniowie_klasy.id_ucznia = uczniowie.id_ucznia
+INNER JOIN klasy ON klasy.id_klasy = uczniowie_klasy.id_klasy
+WHERE klasy.nazwa_klasy_skrocona = '1a' OR klasy.nazwa_klasy_skrocona = '1b' OR klasy.nazwa_klasy_skrocona = '1c'
+ORDER BY klasy.nazwa_klasy_skrocona DESC, uczniowie.nazwisko;
+
+
+
+
+SELECT klasy.nazwa_klasy_skrocona, COUNT(klasy.nazwa_klasy_skrocona) AS 'ilosc uczkiow'
+FROM uczniowie
+INNER JOIN uczniowie_klasy ON uczniowie_klasy.id_ucznia = uczniowie.id_ucznia
+INNER JOIN klasy ON klasy.id_klasy = uczniowie_klasy.id_klasy
+WHERE klasy.nazwa_klasy_skrocona = '1a' OR klasy.nazwa_klasy_skrocona = '1b' OR klasy.nazwa_klasy_skrocona = '1c'
+ORDER BY klasy.nazwa_klasy_skrocona;
+
+
+
+
+
+
+
+
+DROP TABLE IF EXISTS dane_uczniow;
+
+CREATE TABLE dane_uczniow (
+    id_ucznia INT(11) NOT NULL,
+    imie_matki VARCHAR(15) DEFAULT NULL,
+    imie_ojca VARCHAR(15) DEFAULT NULL,
+    miejscowosc VARCHAR(30) DEFAULT NULL,
+    kod_pocztowy VARCHAR(6) DEFAULT NULL,
+    adres VARCHAR(50) DEFAULT NULL,
+    nr_tel_rodzica VARCHAR(9) DEFAULT NULL,
+    mail_ucznia VARCHAR(50) DEFAULT NULL,
+    nr_tel_ucznia VARCHAR(9) DEFAULT NULL,
+    PRIMARY KEY (id_ucznia),
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowie (id_ucznia)
+);
+
+
+
+
+INSERT INTO dane_uczniow (id_ucznia, imie_matki, imie_ojca, miejscowosc, kod_pocztowy, adres, nr_tel_rodzica, mail_ucznia, nr_tel_ucznia)
+VALUES
+    (1, 'Anna', 'Piotr', 'Warszawa', '00-001', 'ul. Kwiatowa 1', '123456789', 'anna@example.com', '987654321'),
+    (2, 'Monika', 'Marcin', 'Kraków', '30-002', 'ul. Szkolna 2', '234567890', 'monika@example.com', '876543219'),
+    (3, 'Katarzyna', 'Tomasz', 'Gdańsk', '80-003', 'ul. Leśna 3', '345678901', 'katarzyna@example.com', '765432198');
+
+
+
+
+
+
+INSERT INTO uczniowie (imie, nazwisko, data_urodzenia) VALUES
+    ('Jan', 'Kowalski', '2005-05-15'),
+    ('Anna', 'Nowak', '2006-08-23'),
+    ('Pola', 'Jaremi', '2007-03-10'),
+    ('Tola', 'Lewandowski', '2005-12-30'),
+    ('Adam', 'Wiśniewski', '2006-11-12'),
+    ('Henryk', 'Wójcik', '2007-09-09'),
+    ('Karol', 'Kamiński', '2005-06-10'),
+    ('Grażyna', 'Kowalczyk', '2006-07-17'),
+    ('Lidia', 'Zieliński', '2007-01-18'),
+    ('Sylwester', 'Szymański', '2005-07-23'),
+    ('Julian', 'Kilertyk', '2006-02-24'),
+    ('Julia', 'Jankowski', '2007-08-28'),
+    ('Karolina', 'Woźniak', '2005-09-23'),
+    ('Jakub', 'Wojciechowski', '2006-04-04'),
+    ('Kuba', 'Kwiatkowski', '2007-01-02'),
+    ('Dariusz', 'Mazur', '2005-05-08'),
+    ('Maurycy', 'Wiśniewski', '2006-09-04'),
+    ('Robert', 'Król', '2007-06-04'),
+    ('Marcin', 'Piotrowski', '2008-05-02'),
+    ('Alicja', 'Wójcik', '2004-03-09'),
+    ('Klaudia', 'Grabowski', '2008-02-10'),	
+    
