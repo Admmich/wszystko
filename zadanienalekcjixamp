@@ -40,3 +40,32 @@ VALUES
     (1, 'Anna', 'Piotr', 'Warszawa', '00-001', 'ul. Kwiatowa 1', '123456789', 'anna@example.com', '987654321'),
     (2, 'Monika', 'Marcin', 'Kraków', '30-002', 'ul. Szkolna 2', '234567890', 'monika@example.com', '876543219'),
     (3, 'Katarzyna', 'Tomasz', 'Gdańsk', '80-003', 'ul. Leśna 3', '345678901', 'katarzyna@example.com', '765432198');
+
+
+INSERT INTO dane_uczniow (id_ucznia, imie_matki, imie_ojca, miejscowosc, kod_pocztowy, adres, nr_tel_rodzica, mail_ucznia, nr_tel_ucznia) VALUES
+    (1, 'Maria', 'Andrzej', 'Warszawa', '00-001', 'ul. Kwiatowa 1', '500600700', 'jan.kowalski@example.com', '600700800'),
+    (2, 'Jolanta', 'Krzysztof', 'Kraków', '30-002', 'ul. Szkolna 2', '501601701', 'anna.nowak@example.com', '601701801'),
+    (3, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (4, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (5, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (6, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (7,'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (8, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (9, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (10, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (11,'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (12,'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (13, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (14, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (15, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (16, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (17, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (18, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (19, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (20, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (21, 'Renata', 'Marek', 'Poznań', '60-005', 'ul. Ogrodowa 21', '521921021', 'klaudia.grabowski@example.com', '621021121'),
+    (22, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (23, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (24, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902'),
+    (25, 'Dorota', 'Piotr', 'Gdańsk', '80-003', 'ul. Leśna 3', '502702802', 'pola.jaremi@example.com', '602802902');
+  
