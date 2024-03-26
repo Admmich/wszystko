@@ -10,3 +10,33 @@ FOREIGN KEY(id_nauczyciela) REFERENCES nauczyciele (id_nauczyciela),
 FOREIGN KEY(id_przedmiotu) REFERENCES przedmioty (id_przedmiotu),
 FOREIGN KEY(id_dzien) REFERENCES dzien (id_dzien),
 FOREIGN KEY(id_numer_lekcji) REFERENCES numer_lekcji(id_numer_lekcji))
+
+
+
+
+
+
+DROP TABLE IF EXISTS dane_uczniow;
+
+CREATE TABLE dane_uczniow (
+    id_ucznia INT(11) NOT NULL,
+    imie_matki VARCHAR(15) DEFAULT NULL,
+    imie_ojca VARCHAR(15) DEFAULT NULL,
+    miejscowosc VARCHAR(30) DEFAULT NULL,
+    kod_pocztowy VARCHAR(6) DEFAULT NULL,
+    adres VARCHAR(50) DEFAULT NULL,
+    nr_tel_rodzica VARCHAR(9) DEFAULT NULL,
+    mail_ucznia VARCHAR(50) DEFAULT NULL,
+    nr_tel_ucznia VARCHAR(9) DEFAULT NULL,
+    PRIMARY KEY (id_ucznia),
+    FOREIGN KEY (id_ucznia) REFERENCES uczniowie (id_ucznia)
+);
+
+
+
+
+INSERT INTO dane_uczniow (id_ucznia, imie_matki, imie_ojca, miejscowosc, kod_pocztowy, adres, nr_tel_rodzica, mail_ucznia, nr_tel_ucznia)
+VALUES
+    (1, 'Anna', 'Piotr', 'Warszawa', '00-001', 'ul. Kwiatowa 1', '123456789', 'anna@example.com', '987654321'),
+    (2, 'Monika', 'Marcin', 'Kraków', '30-002', 'ul. Szkolna 2', '234567890', 'monika@example.com', '876543219'),
+    (3, 'Katarzyna', 'Tomasz', 'Gdańsk', '80-003', 'ul. Leśna 3', '345678901', 'katarzyna@example.com', '765432198');
