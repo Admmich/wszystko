@@ -1,0 +1,12 @@
+CREATE TABLE plan_lekcji(
+id_plan INT AUTO_INCREMENT PRIMARY KEY,
+id_klasy INT NOT NULL,
+id_nauczyciela INT NOT NULL,
+id_przedmiotu INT NOT NULL,
+id_dzien INT NOT NULL,
+id_numer_lekcji INT NOT NULL,
+FOREIGN KEY(id_klasy) REFERENCES klasy (id_klasy),
+FOREIGN KEY(id_nauczyciela) REFERENCES nauczyciele (id_nauczyciela),
+FOREIGN KEY(id_przedmiotu) REFERENCES przedmioty (id_przedmiotu),
+FOREIGN KEY(id_dzien) REFERENCES dzien (id_dzien),
+FOREIGN KEY(id_numer_lekcji) REFERENCES numer_lekcji(id_numer_lekcji))
